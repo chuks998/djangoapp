@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% block content %}
+    <h2 class="lead text-center">Tracker & Shipment</h2>
+    <div style="background-color: whitesmoke; margin: 10px 0;" class="container">
+        <i class="lead card-text text-warning">our customers are to search for their tracking number from the list below.</i>
+    </div>
+    {% for post in item %}
+    <div class="container border rounded shadow">
+        {% if post.order_status == 'pending' %}
+        <i class="text-warning lead" style="float: left;">Status: pending</i>
+        {% elif post.order_status == 'active' %}
+        <i class="text-primary lead" style="float: left;">Status: active</i>
+        {% elif post.order_status == 'delivered' %}
+        <i class="text-success lead" style="float: left;">Status: delivered</i>
+        {% elif post.order_status == 'delayed' %}
+        <i class="text-danger lead" style="float: left;">Status: delayed</i>
+        {% endif %}
+        <hr>
+        <div class="col-sm-1">
+            <a class="nav-link text-uppercase" href="{% url 'tracker-detail' post.id %}"><h2 style="color: rgb(26, 26, 82);">{{ post.order_id }}</h2></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/bootstrap.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'home/style.css' %}">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@0;1&family=Bungee&family=Bungee+Hairline&family=Caladea:ital,wght@0,400;0,700;1,400&family=Castoro:ital@0;1&family=Charmonman:wght@400;700&family=Chathura:wght@100;300;400;700&family=Comic+Neue:ital,wght@0,300;0,400;1,300;1,400&family=Commissioner:wght@100;200;300;400;500;600&family=Cormorant+SC:wght@300;400;500;600;700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Cormorant+Upright:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700&family=Elsie:wght@400;900&family=Girassol&family=Goldman:wght@400;700&family=Harmattan:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Kumbh+Sans:wght@300;400;700&family=Libre+Caslon+Display&family=Major+Mono+Display&family=Odibee+Sans&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&family=Srisakdi&family=Stalemate&family=Timmana&family=Viaoda+Libre&family=Xanh+Mono:ital@0;1&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+    <title>TOC search</title>
+</head>
+<body style="background-color: #D7D7D7;" class="container">
+    {% block content %} 
+    <div style="background-color: #ffffff; height: 275px; width: 318px; margin: auto;">
+        {% for numbers in object_list %}
+            {% if numbers in object_list %}
+                <p style="font-family: Averia Libre; font-size: 16px;" class="text-center">we found your package</p>
+                <a style="text-decoration: none;" class="text-center" href="{% url 'tracker-detail' numbers.id %}"><p style="font-family: Arial, Helvetica, sans-serif; font: size 13px;">{{ numbers.order_id }}</p></a>
+            {% endif %}
+            <!--{{ numbers.order_id }}-->
+        {% endfor %}
+        <p class="text-center" style="line-height: 300px; font-size: 13px; font-family: Averia Libre;">Can't find your package? check your tracking number</p>
+        {% endblock %}
+    </div>
+
+
+    <script src="{% static 'home/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
+

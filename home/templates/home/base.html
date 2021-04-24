@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'home/bootstrap.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'home/style.css' %}">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@0;1&family=Bungee&family=Bungee+Hairline&family=Caladea:ital,wght@0,400;0,700;1,400&family=Castoro:ital@0;1&family=Charmonman:wght@400;700&family=Chathura:wght@100;300;400;700&family=Comic+Neue:ital,wght@0,300;0,400;1,300;1,400&family=Commissioner:wght@100;200;300;400;500;600&family=Cormorant+SC:wght@300;400;500;600;700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Cormorant+Upright:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700&family=Elsie:wght@400;900&family=Girassol&family=Goldman:wght@400;700&family=Harmattan:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Kumbh+Sans:wght@300;400;700&family=Libre+Caslon+Display&family=Major+Mono+Display&family=Odibee+Sans&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&family=Srisakdi&family=Stalemate&family=Timmana&family=Viaoda+Libre&family=Xanh+Mono:ital@0;1&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <!--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@0;1&family=Bungee&family=Bungee+Hairline&family=Caladea:ital,wght@0,400;0,700;1,400&family=Castoro:ital@0;1&family=Charmonman:wght@400;700&family=Chathura:wght@100;300;400;700&family=Comic+Neue:ital,wght@0,300;0,400;1,300;1,400&family=Commissioner:wght@100;200;300;400;500;600&family=Cormorant+SC:wght@300;400;500;600;700&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Cormorant+Upright:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700&family=Elsie:wght@400;900&family=Girassol&family=Goldman:wght@400;700&family=Harmattan:wght@400;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Kumbh+Sans:wght@300;400;700&family=Libre+Caslon+Display&family=Major+Mono+Display&family=Odibee+Sans&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&family=Srisakdi&family=Stalemate&family=Timmana&family=Viaoda+Libre&family=Xanh+Mono:ital@0;1&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    -->
+    <title>TOC Delivery</title>
+</head>
+<nav style="background-color: #f2f2f2;" class="sticky-top">
+    <p style="padding-left: 20px; padding-top: 10px; font-size: 20px; font-family: 'Averia Libre';">AirCourierService</p>
+    <p style="margin-top: 0px; padding-left: 20px; padding-top: 5px; font-size: 16px; font-family: 'Averia Libre'; color: #ffff00; text-shadow: 1px 1px 1px #000;">Item Tracker</p>
+    <div style="background-color: whitesmoke;" class="container mt-3 input-group">
+        <form class="input-group mb-3" action="{% url 'search' %}" method="get">
+            <input style="border-radius: 20px; width: 208px; height: 35px; border-width: 0px;" name="q" type="text" placeholder="Enter tracking number">
+            <button style="border-radius: 20px; width: 65px; background-color: #ffff80; border-width: 0px;" type="submit">Track</button>
+        </form>
+    </div>
+</nav>
+<body style="background-color: #D7D7D7;">
+    <div>
+        {% block content %} {% endblock %}
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    -->
+    <!-- Option 2: Separate Popper and Bootstrap JS 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+-->
+    <script src="{% static 'home/bootstrap.js' %}"></script>
+</body>
+
+</html>

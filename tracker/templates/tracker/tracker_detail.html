@@ -1,0 +1,24 @@
+{% extends 'tracker/search.html' %}
+{% block content %}
+   <p class="text-capitalize" style="margin-bottom: 10px; text-align: center; color: #ffff80; text-shadow: 1px 1px 5px #000000; font-size: 20px;">package details</p>
+   <div style="background-color: #ffffff; box-shadow: #000000 0px 2px 5px;">
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">name: {{object.order_name}}</h2>
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">email: {{object.order_email_address}}</h2>
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">phone: {{object.order_phone_phone_number}}</h2>
+
+      <div class="border rounded shadow-sm container mb-3" style="background-color: whitesmoke;">
+         <p class="lead text-primary text-capitalize bg-white">shipment details</p>
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">delivery address: {{object.order_address}}</h2>
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">item current location: {{object.order_destination}}</h2>
+         <h2 style="font-family: 'Averia Libre'; color: black; font-size: 16px;" class="text-capitalize">item content: {{object.order_content}}</h2>
+      </div>
+   </div>
+   <label style="font-size: 14px;" class="text-muted text-capitalize lead" for="item">item shipment progress {{ object.order_progress }}%</label>
+   
+      <progress class="w-80 shadow" id="item" value="{{ object.order_progress }}" max="100"> {{ object.order_progress }} </progress>
+   
+   
+
+{% endblock content %}
+    
+ 
